@@ -1,0 +1,87 @@
+@startuml
+skin rose
+set separator none
+!pragma userIntermediatePackages false
+package cl.ucn.disc.poo.MurderRobots{
+    package model {
+        class Robot{
+            - numeroSerie: String
+            - cabeza: Material
+            - cuerpo: Material
+            - brazos: Material
+            - piernas: Material
+            + Robot(numeroSerie String, cabeza Material, cuerpo Material, brazos Material, piernas Material)
+            + getNumeroSerie(): String
+            + getCabeza(): Material
+            + getCuerpo(): Material
+            + getBrazos(): Material
+            + getPiernas(): Material
+            + setCabeza(cabeza: Material): Robot
+            + setCuerpo(cuerpo: Material): Robot
+            + setBrazos(brazos: Material): Robot
+            + setPiernas(piernas: Material): Robot
+            + getPuntosDefensaTotal(): int
+            + getDanioAtaqueTotal(): int
+            + getPuntosVidaTotal(): int
+        }
+
+        enum Material {
+            - METAL_COMUN, ACERO, GRAFENO, VIBRANIUM
+            - nombre: String
+            - puntoDefensa: int
+            - danioAtaque: int
+            - puntosVidaBase: int
+            + Material(nombre String, puntoDefensa int, dianioAtaque int, puntosVidaBase int)
+            + getNombre(): String
+            + getPuntoDefensa(): int
+            + getDanioAtaque(): int
+            + getPuntosVidaBase(): int
+        }
+    }
+
+    package service {
+        class FabricaDeRobots {
+            - generarNumeroSerieAleatorio(): String
+            - instanciaUnica: FabricaDeRobots
+            - robots: Map<String, Robot>
+            + getInstance(): FabricaDeRobots
+            + ensamblarRobot(cabeza Material, cuerpo Material, brazos Material, piernas Material): Robot
+            + reemplazarParte(numeroSerie int, nuevaCabeza Material, nuevoCuerpo Material, nuevosBrazos Material, nuevasPiernas Material): Robot
+            + getRobots(): String
+            + destruirDatos(): void
+            + existeRobot(numeroSerie int): boolean
+            + getRobot(numeroSerie): Robot
+        }
+    }
+
+    package ui {
+        class MenuSistema {
+            - ensamblarRobotButton: JButton
+            - editarRobotButton: JButton
+            - mostrarRobotButton: JButton
+            - salirButton: JButton
+            - PanelPrincipal: JPanel
+            + MenuSistema()
+            + ensamblarRobot(): void
+            + editarRobot(): void
+            + imprimirEstadisticas(robot: Robot): void
+            + mostrarRobots(): void
+            + obtenerNumeroSerie(robotInfo: String): String
+            + salir(): void
+            + obtenerMaterial(materialInput: String): Material
+        }
+    }
+
+    package javax.swing.* {
+        class Main {
+            + main(String[]): void
+        }
+    }
+}
+
+MenuSistema --|> Main
+MenuSistema ..> FabricaDeRobots: <<use>>
+FabricaDeRobots o--> Robot : <<necesita>>
+Robot --> FabricaDeRobots: <<lo crea>>
+Robot <-- Material : <<compone>>
+@enduml
