@@ -51,43 +51,93 @@ public class Robot {
         return cuerpo;
     }
 
+    /**
+     * getter Brazos
+     *
+     * @return brazps
+     */
     public Material getBrazos() {
         return brazos;
     }
 
+    /**
+     * getter Piernas
+     *
+     * @return piernas
+     */
     public Material getPiernas() {
         return piernas;
     }
 
+    /**
+     * Setter cabeza
+     *
+     * @param cabeza
+     * @return this.cabeza
+     */
     public Robot setCabeza(Material cabeza) {
         this.cabeza = cabeza;
         return this;
     }
 
+    /**
+     * Setter Cuerpo
+     *
+     * @param cuerpo
+     * @return this.cuerpo
+     */
     public Robot setCuerpo(Material cuerpo) {
         this.cuerpo = cuerpo;
         return this;
     }
 
+    /**
+     * setter Brazos
+     *
+     * @param brazos
+     * @return this.brazos
+     */
     public Robot setBrazos(Material brazos) {
         this.brazos = brazos;
         return this;
     }
 
+    /**
+     * setter Piernas
+     *
+     * @param piernas
+     * @return this.piernas
+     */
     public Robot setPiernas(Material piernas) {
         this.piernas = piernas;
         return this;
     }
 
+    /**
+     * getter Puntos De Defensa Total
+     *
+     * @return PuntosDefensaTotal
+     */
     public int getPuntosDefensaTotal() {
         return cabeza.getPuntoDefensa() + cuerpo.getPuntoDefensa() + brazos.getPuntoDefensa() + piernas.getPuntoDefensa();
     }
 
+    /**
+     * getter Daño De Ataque Total
+     *
+      * @return DanioTotal
+     */
     public int getDanioAtaqueTotal() {
         return cabeza.getDanioAtaque() + cuerpo.getDanioAtaque() + brazos.getDanioAtaque() + piernas.getDanioAtaque();
     }
 
+    /**
+     * getter Puntos De Vida Total
+     *
+     * @return PuntosVidaTotal
+     */
     public int getPuntosVidaTotal() {
         return cabeza.getPuntosVidaBase() + cuerpo.getPuntosVidaBase() + brazos.getPuntosVidaBase() + piernas.getPuntosVidaBase();
     }
+
 }

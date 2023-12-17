@@ -11,6 +11,14 @@ public enum Material {
     private int danioAtaque;
     private int puntosVidaBase;
 
+    /**
+     * Constructor Material
+     *
+     * @param nombre
+     * @param puntoDefensa
+     * @param danioAtaque
+     * @param puntosVidaBase
+     */
     Material(String nombre, int puntoDefensa, int danioAtaque, int puntosVidaBase) {
         this.nombre = nombre;
         this.puntoDefensa = puntoDefensa;
@@ -18,18 +26,38 @@ public enum Material {
         this.puntosVidaBase = puntosVidaBase;
     }
 
+    /**
+     * getter Nombre
+     *
+     * @return nombre
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * getter Puntos Defensa
+     *
+     * @return puntosDefensa
+     */
     public int getPuntoDefensa() {
         return puntoDefensa;
     }
 
+    /**
+     * getter Daño de Ataque
+     *
+     * @return danioAtaque
+     */
     public int getDanioAtaque() {
         return danioAtaque;
     }
 
+    /**
+     * getter Puntos De Vida Base
+     *
+     * @return puntosVidaBase
+     */
     public int getPuntosVidaBase() {
         return puntosVidaBase;
     }
