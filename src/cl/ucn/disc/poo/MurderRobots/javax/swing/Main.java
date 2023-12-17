@@ -1,3 +1,5 @@
+package cl.ucn.disc.poo.MurderRobots.javax.swing;
+
 import cl.ucn.disc.poo.MurderRobots.ui.MenuSistema;
 
 import javax.swing.*;
