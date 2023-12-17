@@ -24,14 +24,29 @@ public class Robot {
         this.piernas = piernas;
     }
 
+    /**
+     * getter Numero de Serie
+     *
+     * @return numeroSerie
+     */
     public String getNumeroSerie() {
         return numeroSerie;
     }
 
+    /**
+     * getter Cabeza
+     *
+     * @return cabeza
+     */
     public Material getCabeza() {
         return cabeza;
     }
 
+    /**
+     * getter Cuerpo
+     *
+     * @return cuerpo
+     */
     public Material getCuerpo() {
         return cuerpo;
     }
